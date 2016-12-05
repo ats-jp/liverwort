@@ -1,0 +1,304 @@
+0.2
+	0.2.20060720a
+		LoggingConnection に prepareStatement(String) を追加し忘れていたので追加
+	0.2.20060912a
+		DatabaseColumnRepository のテーブル行管理テーブルのデフォルト名を LIVERWORT_LOCATIONS から LIVERWORT_ANCHORS へ変更
+		DatabaseColumnRepository に使用するテーブルに関する javadoc を追加
+		build.xml にコメント追加
+		ConcreteConnection の getCrossReferences(ResourceLocator, ResourceLocator) で、 KEY_SEQ に 1 がない場合例外をスローするように変更
+		Metadata のコメントの表現を修正
+		package-list を追加
+		Relation を循環参照しないように循環検出機能追加
+	0.2.20060928a
+		Relation を Relationship に名称変更
+	0.2.20061010a
+		UpdateDMLBuilder のメンバの condition が初期値を持たないため NullPointerException が発生していたので修正
+	0.2.20061211a
+		UpdatableDataObject に INSERT 用のコンストラクタを追加
+		DataAccessHelper の SequenceGenerator を使用する insert メソッドを、実際に登録された連続値を返すように修正
+	0.2.20061220a
+		UpdatableDataObject に isValueUpdated() を追加
+		DataObject に getRelationship() を追加
+		NumberSequencer を NumberSequenceGenerator に名称変更
+		NumberSequenceGenerator の依存条件がない場合に不完全な SQL を生成するバグを修正
+	0.2.20070116a
+		eclipse のフォーマッターの enum の折り返しを変更
+		TimestampBinder が null をもてるように修正
+		ByteArrayBinder が null をもてるように修正
+	0.2.20070309a
+		PrimaryKey のコンストラクタの無駄なパラメータを削除
+	0.2.20070322a
+		BatchPreparedStatement を追加、関連クラスを修正し、バッチ実行時のキャッシュバグを修正
+		DataAccessHelper の不必要なメソッド getStatement() を削除
+	0.2.20070323a
+		Column に findAnotherRootColumn(Relationship) を追加
+		Condition に changeColumnsRelationshipTo(Relationship) を追加
+		QueryClause の replicate() メソッドの戻り値を型パラメータに変更し、サブクラスが自身の型で複製できるようにした
+	0.2.20070409a
+		UpdatableDataObject に setAllValuesForcibly() を追加
+		Searchable のコメント修正
+	0.2.20070423a
+		ProxyCondition に append(LogicalOperator, Condition) する際、追加される側を replicate() したものにし、追加した Condition は、不変であるという原則を守るようにした
+		Condition の appended を削除し、どの場合でも reverse() した場合、 () で閉じられるようになった
+		Condition の replicate() で全てのメンバがコピーされるように修正
+	0.2.20070426a
+		Condition で reverse() した場合、即座に NOT が付加されるようにし、 current をクリアするように修正
+		Condition の equalsWithoutBinders(Condition) と hashCode() で current を使用するように修正
+	0.2.20070830a
+		UpdatableDataObject の autoCommit デフォルト値を true から false へ変更
+
+0.3
+	0.3.20070817a
+		開発時に使用するクラス用パッケージ develop を新たに用意し、そのパッケージのみの liverwort-develop.jar を生成するようにした
+		liverwort-extension.jar は廃止し、元のクラスは通常の liverwort.jar に含まれるように変更
+		extension パッケージの DisableBatchStatement を develop パッケージに移動
+		extension パッケージの DisableConnection を develop パッケージに移動
+		extension パッケージの DisablePreparedStatement を develop パッケージに移動
+		extension パッケージの DisableResultSet を develop パッケージに移動
+		extension パッケージの MockConnection を develop パッケージに移動
+		extension パッケージの MockSpaceFactory を develop パッケージに移動
+		extension パッケージの MockTransaction を develop パッケージに移動
+		extension パッケージの MockTransactionFactory を develop パッケージに移動
+		テーブルの項目の型を ResultSetMetaData.getColumnClassName(int) からではなく DatabaseMetaData.getColumns(String, String, String, String) から取得するように変更、それに伴い、関連クラスを修正
+		DataTypeConverter を追加
+		VirtualSpaceFactory が読み込む XML の <column> 要素に属性 type を追加
+		Column の getColumnName() を getName() に変更
+		Column の getComplementedColumnName() を getComplementedName() に変更
+		Column に getType() を追加
+		Metadata に getColumnTypes(ResourceLocator) を追加
+		LiResult に getColumnClass(int) を追加
+	0.3.20070821a
+		changelog.txt を更新
+	0.3.20070822a
+		DefaultValueExtractors にプリミティブ型のラッパークラスでも ValueExtractor が選択できるように変更
+	0.3.20070829a
+		Selector を NOWAIT が付加できるように変更
+		DataAccessHelper に RowLockOption を追加
+		コメント内のクラス名を整理
+	0.3.20070920a
+		UpdatableDataObject の setValuesTo(Updater) を synchronized 化
+	0.3.20071001a
+		LiTransaction の commit() と rollback() 内で発生した例外を RuntimeException でラップしてスローするように修正
+	0.3.20071024a
+		SingleMetadataFactory に setResource(Class) を追加
+	0.3.20071130a
+		DTOFactory と DTOIterator を、自動生成するのではなく extension パッケージに変更
+	0.3.20071204a
+		UpdatableDataObject 内の updateValues を初期化せず使用していた箇所を修正
+		DataAccessHelper の BatchStatement を使用している更新、削除の戻り値は意味がないので、削除
+		DAO テンプレートから DTO 更新メソッドを削除し、 DTO テンプレートに移動
+	0.3.20071213a
+		ResourceLocator の不正文字チェックを全テーブル取得時にはせずに、無視するように修正
+	0.3.20071226a
+		Condition の append(LogicalOperator, Condition) を簡略化のため and(Condition) と or(Condition) の二つに分割
+	0.3.20080118a
+		DataAccessHelper に渡す RowLockOption パラメータが null でも可となるように変更
+		自動生成される DAO の select(Optimizer, Condition, OrderByClause, Limiter, RowLockOption) の戻り値を、 DTOIterator に変更
+		自動生成される DTO の参照テーブル部分のコメントに項目名を追加
+	0.3.20080215a
+		自動生成される DTO に、内部で保持している UpdatableDataObject を返す getDataObject() を追加
+		自動生成される DTO の getter メソッドが null を返す場合、 NullPointerException が発生するバグを修正
+		自動生成される DTO の getter メソッドが プリミティブ型を返す場合、ラッパークラスで返すように変更
+
+0.4
+	0.4.20080221a
+		DataObjectClassBuilder の convertToWrapperClass(Class) を substrate の SystemUtilities に移行
+		ColumnMetadata クラスを追加し、関連箇所を変更
+		Metadata から ColumnMetadata を取得するように変更
+		MetadatasConnection の仕様を変更し、適切な値を返すように変更
+		develop パッケージの Mock 系クラスを削除
+		PrimaryKey の copy(ResourceLocator, PartialData, PartialData) のバグを修正
+		ConditionFactory の createSubQueryCondition(Column[], QueryBuilder) に、パラメータ検査を追加
+		ConditionFactory に createCondition(Column, Bindable) を追加
+	0.4.20080222a
+		substrate の SystemUtilities の toString(Object) を、デフォルトのデバッグ用メソッドとして該当するクラスに適用
+		static メソッドしか使用しないクラスにプライベートコンストラクタを追加
+	0.4.20080226a
+		ColumnMetadata で直接 Class を返すのではなく getType() で java.sql.Types のタイプ値を返すように変更
+		ColumnMetadata に getTypeName() を追加
+		ColumnMetadata に getRemarks() を追加
+		上記にあわせて関連クラスを変更
+	0.4.20080310a
+		Condition 内の LogicalOperator を private 化
+		SynchronizedQueryBuilder を追加
+		SynchronizedSelector を追加
+		ルートの違う Relationship や Column を変換して使用可能にするように変更し、関連箇所を変更
+		RelationshipUtilities を追加
+		Updater の getResourceLocator() と getColumnNames() を protected から public に変更
+		prepareSelector(Optimizer, Condition, OrderByClause, Limiter, RowLockOption) に optimizer の null 検査を追加
+	0.4.20080331a
+		QueryClause 等の Column のあいまい特定機能を廃し、あいまい特定のための PhantomColumn クラスを追加
+		FromClause の Relationship のあいまい特定機能を廃し、あいまい特定のためのメソッド join(JoinType, ResourceLocator) と getJoint(ResourceLocator, String[]) を追加
+		RelationshipUtilities は、メソッドが convert(Relationship, ResourceLocator) のみになったので、 Relationship にメソッドを移動し、クラスは削除
+	0.4.20080401a
+		SelectedValuesIterator のコンストラクタのパラメータを変更し、内部で検索を実行しないようにすることでサブクラスを作れるようにした
+		EmptySelectedValuesIterator を追加し、 Selector に EMPTY_SELECTED_VALUES_ITERATOR としてインスタンスを保持するように変更
+		EmptyDataObjectIterator を追加し、 DataAccessHelper に EMPTY_DATA_OBJECT_ITERATOR, EMPTY_UPDATABLE_DATA_OBJECT_ITERATOR としてインスタンスを保持するように変更
+		DTOIterator に close() と getCounter() を追加
+		自動生成される DAO に EMPTY_DTO_ITERATOR を追加
+	0.4.20080417a
+		substrate のコレクションクラス型推論コンストラクタ追加に対応
+		CollectionMap, CollectionMapMap の C 型パラメータ削除に対応
+	0.4.20080430a
+		Relationship の root ではない UpdatableDataObject の update() ができないバグを修正
+	0.4.20080606a
+		より厳しくジェネリックに対応
+		PrimaryKey に簡易コンストラクタ getInstance(ResourceLocator, String...) を追加
+		自動生成される DAO に select(Optimizer, RowLockOption, String...) を追加
+	0.4.20080613a
+		DataObjectNotFoundException を追加し、 DataAccessHelper で PrimaryKey を条件にした検索で、検索結果がない場合、スローするように変更
+	0.4.20080708a
+		UpdatableDataObject の setValueForcibly() が commit() 済みの値を更新しないバグを修正
+		UpdatableDataObject に removeUpdateValue(String) を追加
+		LiStatement に execute(), getResultSet(), getUpdateCount(), getMoreResults() を追加
+		Disable 系のクラスを削除
+		substrate の Releaseable 削除対応
+		ConcretePreparedStatement と ConcreteResultSet に finalize() を追加し、自動クローズするように関連クラスを修正
+		自動生成される DAO の update 用メソッドに条件を使用していないバグを修正
+		Initializer の maxStatementsPerConnection のデフォルト値を 10 から Integer.MAX_VALUE に変更
+		DataAccessHelper と RuntimeOptimizer のキャッシュのデフォルト値を 50 になるように変更
+	0.4.20080709a
+		LiManager で ConfigureChangeListener が値からキーオブジェクトを強参照していた (DataAccessHelper) ので開放されないため、 ConfigureChangeListener を保持するのを WeakReference 越しにするように変更
+	0.4.20080717a
+		ConcretePreparedStatement の開放を finalize のみで行うようにし、関連クラスを修正
+		QueryBuilder の各メソッドを synchronized 化し、マルチスレッド対応
+		Selector の書くメソッドを synchronized 化し、マルチスレッド対応
+	0.4.20080731a
+		DAO 、 DTO のテンプレートを、直接 java ソースから取得するように変更し、既存のテンプレートを削除
+		EasyStarter を追加
+		UpdatableDataObject の update(BatchStatement) が戻り値を持たないように変更
+	0.4.20080818a
+		EasyStarter にコメントを追加
+		FromClause をリファクタリング
+		LiException に SQLException を返す getCause() を追加
+		自動生成される定数定義インターフェイス (Interface) を DAO から抽出し、追加
+		DAO を抽象クラス化 (GenericDAO) し、 DAO として実装クラスを新たに追加
+		LiManager で ConfigureChangeListener を保持するのを WeakReference 越しにするための変更は、本来の機能を損なうだけなので止めて、 addConfigureChangeListener(ConfigureChangeListener) と removeConfigureChangeListener(ConfigureChangeListener) で管理するように変更
+		上記にあわせて、 ConfigureChangeListener を抽象クラス化し、 hashcode() と equals(Object) をfinal 化しオーバーライド不可となるよう変更
+		上記にあわせて、 DataAccessHelper に finalize() をつけて、 LiManager.removeConfigureChangeListener(ConfigureChangeListener) を実行するように変更
+	0.4.20080902a
+		DTO の各項目ごとに持っていた ValueExtractor を 各メソッド内でその都度とるように変更し、クラス初期化時に項目の違いでエラーを出さないようにした
+	0.4.20080904a
+		新たに SQLProxyBuilder を追加
+	0.4.20080908a
+		LiManager の initialize(Initializer) に ログ出力を追加
+		IllegalValueException のメッセージ組み立てを ConcreteSelectedValues に移動し、そこにログ出力を追加
+		EasyStarter の start(String, String, String, String, boolean) にパラメータ追加
+		ConcreteConnection に regularize(String) を追加し、各メソッドでこれらを使用するように変更
+	0.4.20080911a
+		DAO に select(Condition, OrderByClause, Limiter, RowLockOption) と select(RowLockOption, String...) を追加
+	0.4.20081021a
+		GenericDAO と SimpleQueryClause の不必要な @SuppressWarnings("unchecked") を削除
+		Eclipse3.4 に変更
+		Selector に setValueExtractorsClass(Class<ValueExtractors>) を追加
+	0.4.20081023a
+		EasyStarter に start(Container<String>) を追加
+	0.4.20081105a
+		EasyStarter の isAvailable(String) を substrate のものに置き換え
+	0.4.20081208a
+		DataObjectClassBuilder から substrate の ClassBuilderUtilities へ共通で使える部分を出し、それを使用するように変更
+	0.4.20090119a
+		ConcreteConnection の getTables(String) に tableTypes で絞り込むように修正
+		DataObjectClassBuilder の各生成メソッドを、ファイル作成からソース返却に変更
+		DataObjectClassBuilder に createInterfaceCompilationUnitName(String) を追加
+		DataObjectClassBuilder に createGenericDAOCompilationUnitName(String) を追加
+		DataObjectClassBuilder に createDAOCompilationUnitName(String) を追加
+		DataObjectClassBuilder に createDTOCompilationUnitName(String) を追加
+		SimpleColumnRepositoryFactory の loadDefault() で IOUtilities.getResourceAsFile(String) を使用するように変更
+	0.4.20090618a
+		SequenceOverflowException のコンストラクタを public に変更
+		AnchorOrtimizer の getOptimizedSelectClause() に、開発中の setAddsNewColumns(boolean) し忘れを例外をスローするように変更
+		DTO の get メソッドで NumberUtilities.cast(Class, Object) を使用するように変更
+		EasyStarter の start(Container<String>) で使用するオプション名の default-stacktrace-pattern を runtime-optimizer-default-stacktrace-pattern に変更
+		PhantomColumn が ResourceLocator 無しでも生成可能とし、各 QueryClause でも項目名のみで項目追加を可能とした
+	0.4.20090731a
+		GenericDAO の 各 select(Optimizer, RowLockOption, String...) で、検索結果が存在しない場合、 null を返すように変更
+	0.4.20090803a
+		EasyStarter から start(Container<String>) を Liverwort に移動し、クラスを develop に移動
+		start(Container<String>) と clearCache() を持つ Liverwort クラスを追加
+	0.4.20090805a
+		GenericDAO を各テーブル毎に用意するのではなく、一クラスしか生成しないように変更
+		上記修正に伴い、各 DTO 共通のインターフェイスとなる DTO を extension に追加
+		上記修正に伴い、 DAO 、 DTO のクラス名を DAOBase 、 DTOBase に変更
+	0.4.20091115a
+		自動生成 Interface の RELATIONSHIP を削除、 DTOBase クラスでも参照をやめ、キャッシュクリア時に Relation が残らないようにする
+	0.4.20100709a
+		Logger の addBiningValue(String, int, Object) を addBindingValue(String, int, Object) に修正し、関連箇所も修正
+		SequenceGenerator から getResourceLocator() を削除し、 DataAccessHelper の insert(SequenceGenerator, Updatable, int) と  insert(BatchStatement, SequenceGenerator, Updatable, int) に ResourceLocator を渡すように変更
+		GenericDAO に insert(SequenceGenerator, T, int) と insert(BatchStatement, SequenceGenerator, T, int) を追加
+	0.4.20100715a
+		AnchorOptimizer 初期化時にデータベースを使用しないように、初期化遅延するように修正
+		LiManager の getConnection() のエラーチェックを強化
+	0.4.20101122a
+		SimpleQueryClause にサブクラス用のタイプパラメータ T を追加、関連箇所を修正
+	0.4.20101210a
+		OrderByClause の各 add メソッド（順方向用）を廃止し、 asc, desc で項目追加できるように修正
+	0.4.20101213a
+		SelectClause と GroupByClause の各 add メソッドを、複数パラメータ化
+	0.4.20110518a
+		DefaultErrorConverter の convert(SQLException) に、 SQLException が DataTruncation の場合、追加メッセージを出すように修正
+		SingleMetadataFactory の XML_LOCATION を /metadata-extension.xml から /liverwort-metadata.xml に変更
+		DataObjectClassBuilder の buildDTO(Relationship) で、配列型の戻り値を使用できるように修正
+		GenericDAO に、select(RowLockOption, Bindable...) と select(Optimizer, RowLockOption, Bindable...) を追加
+	0.4.20110614a
+		ConditionFactory に createCondition(Column, String) と createCondition(String, String) を追加
+	0.4.20110909a
+		DataObjectClassBuilder の build(File) の誤りを修正
+		GenericDAO に count(Condition) を追加
+		substrate のユーティリティクラス統合対応
+	0.4.20110922a
+		UpdatableDataObject の updateInternal(StatementFacade) のエラーメッセージを修正
+	0.4.20110924a
+		Limiter を SQLAdjuster とし、 INSERT, UPDATE 両方に渡せるように変更
+	0.4.20110930a
+		DTOIterator の代替機能を DAO のインナークラスとして生成するように変更
+	0.4.20111025a
+		LiResult に getColumnCount() と getColumnName(int) と getColumnTypeName(int) を追加
+	0.4.20120924a
+		CommandColumnRepository から、使用していない変数を除去
+		ConcreteConnection, ConcretePreparedStatement を public に変更
+	0.4.20121003a
+		ConditionFactory の LIKE 検索用のエスケープ文字を ! に変更
+	0.4.20121115a
+		DTOBase をリファクタリング
+	0.4.20121126a
+		DTOBase をリファクタリング
+
+0.5
+	0.5.20130614a
+		Java7 対応
+		VirtualSpace の createPrimaryKeyTableInformation(Metadata, ResourceLocator) のエラーメッセージを修正
+	0.5.20140313a
+		AnchorOptimizer の getId() を getID() に変更し、リファクタリング
+		GenericDAO, DAOBase に、 RowLockOption が必要ない場合の簡易メソッド群を追加
+	0.5.20140512a
+		ResourceLocator の比較用文字列を大文字に統一するように変更
+		LiConnection に regularize(String) を追加し、関連クラスを修正
+		Relationship のユーザー指定文字列を渡される部分を上記 regularize(String) を使用するように変更
+	0.5.20140514a
+		MetadataUtilities のインナークラス Block を使用しないように修正
+		MetadataUtilities に regularize(String[]) を追加し、 Relationship で使用するように修正
+		ConcreteConnection を regularize(String) リファクタリング
+	0.5.20140613a
+		Relationship を regularize(String) リファクタリング
+
+0.6
+	0.6.20140630a
+		新たに Query 機能を導入
+	0.6.20140724a
+		ResourceLocator を Liverwort 設定前からインスタント化可能に修正
+		Query クラスを Liverwort 設定前からインスタンス化可能に修正
+	0.6.20140829a
+		WhereQueryColumn に、各プリミティブ型毎、比較演算子毎のメソッドを追加
+		QueryBase に QueryBase(), QueryBase(Optimizer) を追加
+	0.6.20141127a
+		StringBuffer 使用箇所を StringBuilder に変更
+		文字コードを UTF-8 に変更
+		DataObjectClassBuilder の void build(File) を void build(File, Charset) に変更
+	0.6.20141218a
+		DataAccessHelper にキャッシュしないモードを追加
+	0.6.*********
+		SQLAdjuster に boolean canBuildQueryParts(),  String buildQueryParts(String, String, String, String, String, String) を追加し、 QueryBuilder をこれに合わせて改修
+
+HEAD
+	*.*.*********

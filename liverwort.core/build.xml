@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+Liverwort build.xml
+-->
+<project name="liverwort" default="all">
+
+	<property name="title" value="liverwort" />
+	<property name="version" value="0.7-XXXXXXXXx" />
+	<property name="vendor" value="ats.jp" />
+
+	<path id="develop.classpath">
+		<pathelement location="build" />
+	</path>
+
+	<!--
+	liverwort.jar を生成します。
+	-->
+	<target name="all" depends="cleanup">
+		<antcall target="compile" />
+		<copy todir="build">
+			<fileset dir="src" includes="**/*.java" />
+		</copy>
+		<jar basedir="build" jarfile="liverwort.jar">
+			<manifest>
+				<attribute name="Implementation-Title"   value="${title}"/>
+				<attribute name="Implementation-Version" value="${version}"/>
+				<attribute name="Implementation-Vendor"  value="${vendor}"/>
+			</manifest>
+		</jar>
+	</target>
+
+	<!--
+	ソースファイルを含まない liverwort.jar を生成します。
+	-->
+	<target name="class-jar" depends="cleanup">
+		<antcall target="compile" />
+		<jar basedir="build" jarfile="liverwort.jar">
+			<manifest>
+				<attribute name="Implementation-Title"   value="${title}"/>
+				<attribute name="Implementation-Version" value="${version}"/>
+				<attribute name="Implementation-Vendor"  value="${vendor}"/>
+			</manifest>
+		</jar>
+	</target>
+
+	<!--
+	ソースファイルのみの jar ファイル liverwort-src.jar を生成します。
+	-->
+	<target name="src-jar" depends="cleanup">
+		<jar basedir="src" jarfile="liverwort-src.jar">
+			<include name="**/*.java" />
+			<manifest>
+				<attribute name="Implementation-Title"   value="${title}"/>
+				<attribute name="Implementation-Version" value="${version}"/>
+				<attribute name="Implementation-Vendor"  value="${vendor}"/>
+			</manifest>
+		</jar>
+	</target>
+
+	<!--
+	Liverwort の javadoc を作成します。
+	また、それを圧縮した zip ファイルを作成します。
+	-->
+	<target name="javadoc" depends="cleanup">
+		<mkdir dir="liverwort-api" />
+		<javadoc packagenames="jp.ats.liverwort.*" destdir="liverwort-api" windowtitle="Liverwort API" doctitle="Liverwort API" encoding="UTF-8" charset="UTF-8" docencoding="UTF-8" additionalparam="-J-Dfile.encoding=UTF-8">
+			<sourcepath path="src" />
+			<link offline="true" href="https://docs.oracle.com/javase/jp/8/docs/api/" packagelistLoc="." />
+		</javadoc>
+		<zip zipfile="liverwort-api.zip" basedir="liverwort-api" />
+	</target>
+
+	<!--
+	この build.xml が生成した全てのファイルを削除します。
+	-->
+	<target name="cleanup">
+		<delete dir="build" />
+		<delete dir="liverwort-api" />
+		<delete file="liverwort.jar" />
+		<delete file="liverwort-src.jar" />
+		<delete file="liverwort-api.zip" />
+	</target>
+
+	<!--
+	javac を実行します。
+	-->
+	<target name="compile">
+		<mkdir dir="build" />
+		<javac srcdir="src" destdir="build" debug="true" optimize="true" deprecation="true" encoding="UTF-8" includeantruntime="false">
+			<include name="**/*.java" />
+			<exclude name="**/package-info.java" />
+		</javac>
+	</target>
+</project>
