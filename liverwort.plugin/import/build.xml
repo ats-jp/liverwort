@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="liverwort.plugin" default="import">
 
-	<property name="liverwort.src" value="../../liverwort/src" />
+	<property name="liverwort.src" value="../../liverwort.core/src" />
 	<property name="liverwort.devsrc" value="../../liverwort.develop/src" />
 
 	<path id="develop.classpath">
