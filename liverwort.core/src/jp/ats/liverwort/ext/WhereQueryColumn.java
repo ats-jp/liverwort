@@ -767,6 +767,22 @@ public class WhereQueryColumn<Q> {
 	}
 
 	/**
+	 * WHERE 句に、このカラムの LIKE 条件を追加します。
+	 *
+	 * @see Match
+	 * @param type LIKE 検索の一致タイプ
+	 * @param value 検索条件の値
+	 * @return 連続呼び出し用 {@link Query}
+	 */
+	public Q NOT_LIKE(Match type, String value) {
+		relationship.getContext().addCondition(
+			relationship,
+			ConditionFactory.createNotLikeCondition(type, column, value));
+
+		return root();
+	}
+
+	/**
 	 * WHERE 句に、このカラムの IS NULL 条件を追加します。
 	 *
 	 * @return 連続呼び出し用 {@link Query}

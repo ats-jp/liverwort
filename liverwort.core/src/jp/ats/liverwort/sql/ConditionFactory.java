@@ -71,21 +71,11 @@ public class ConditionFactory {
 	 * @version $Name: v0_4_20090119a $
 	 */
 	public enum Match {
-		/**
-		 * 完全一致
-		 */
-		FULL {
-
-			@Override
-			String getSearchExpression(String value) {
-				return escape(value);
-			}
-		},
 
 		/**
 		 * 後方一致
 		 */
-		SUFFIX {
+		ENDING_WITH {
 
 			@Override
 			String getSearchExpression(String value) {
@@ -96,7 +86,7 @@ public class ConditionFactory {
 		/**
 		 * 前方一致
 		 */
-		PREFIX {
+		STARTING_WITH {
 
 			@Override
 			String getSearchExpression(String value) {
@@ -107,7 +97,7 @@ public class ConditionFactory {
 		/**
 		 * 部分一致
 		 */
-		PARTIAL {
+		CONTAINING {
 
 			@Override
 			String getSearchExpression(String value) {
@@ -118,6 +108,13 @@ public class ConditionFactory {
 		private Condition create(Column column, String value) {
 			return createCondition(
 				"{0} LIKE ? ESCAPE '!'",
+				column,
+				new StringBinder(getSearchExpression(value)));
+		}
+
+		private Condition createNot(Column column, String value) {
+			return createCondition(
+				"{0} NOT LIKE ? ESCAPE '!'",
 				column,
 				new StringBinder(getSearchExpression(value)));
 		}
@@ -250,6 +247,21 @@ public class ConditionFactory {
 	}
 
 	/**
+	 * NOT LIKE を使用した条件句を生成します。
+	 *
+	 * @param type LIKE の位置
+	 * @param column 対象となるカラム
+	 * @param value '%'を含まない値
+	 * @return 作成されたインスタンス
+	 */
+	public static Condition createNotLikeCondition(
+		Match type,
+		Column column,
+		String value) {
+		return type.createNot(column, value);
+	}
+
+	/**
 	 * LIKE を使用した条件句を生成します。
 	 *
 	 * @param type LIKE の位置
@@ -262,6 +274,21 @@ public class ConditionFactory {
 		String columnName,
 		String value) {
 		return type.create(new PhantomColumn(columnName), value);
+	}
+
+	/**
+	 * NOT LIKE を使用した条件句を生成します。
+	 *
+	 * @param type LIKE の位置
+	 * @param columnName 対象となるカラム
+	 * @param value '%'を含まない値
+	 * @return 作成されたインスタンス
+	 */
+	public static Condition createNotLikeCondition(
+		Match type,
+		String columnName,
+		String value) {
+		return type.createNot(new PhantomColumn(columnName), value);
 	}
 
 	/**
