@@ -9,11 +9,11 @@ import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.handlers.HandlerUtil;
 
+import jp.ats.liverwort.internal.U;
 import jp.ats.liverwort.plugin.Constants;
 import jp.ats.liverwort.plugin.LiverwortPlugin;
 import jp.ats.liverwort.plugin.LiverwortPlugin.JavaProjectException;
 import jp.ats.liverwort.plugin.views.QueryEditorView;
-import jp.ats.liverwort.util.U;
 
 public class ChangeProjectHandler extends AbstractHandler {
 

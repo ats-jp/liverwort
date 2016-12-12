@@ -10,6 +10,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.UUID;
 
+import jp.ats.liverwort.internal.TraversableNode;
 import jp.ats.liverwort.jdbc.BatchStatement;
 import jp.ats.liverwort.jdbc.LiContext;
 import jp.ats.liverwort.jdbc.LiManager;
@@ -41,7 +42,6 @@ import jp.ats.liverwort.sql.binder.ObjectBinder;
 import jp.ats.liverwort.sql.binder.StringBinder;
 import jp.ats.liverwort.sql.binder.TimestampBinder;
 import jp.ats.liverwort.sql.binder.UUIDBinder;
-import jp.ats.liverwort.util.TraversableNode;
 
 /**
  * データベースの一行を表すクラスです。

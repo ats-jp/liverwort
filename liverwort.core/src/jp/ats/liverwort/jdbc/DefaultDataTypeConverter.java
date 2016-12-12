@@ -2,7 +2,7 @@ package jp.ats.liverwort.jdbc;
 
 import java.sql.Types;
 
-import jp.ats.liverwort.util.U;
+import jp.ats.liverwort.internal.U;
 
 /**
  * http://java.sun.com/j2se/1.3/ja/docs/ja/guide/jdbc/spec/jdbc-spec.frame8.html

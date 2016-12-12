@@ -3,10 +3,10 @@ package jp.ats.liverwort.jdbc.impl;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
+import jp.ats.liverwort.internal.U;
 import jp.ats.liverwort.jdbc.Configure;
 import jp.ats.liverwort.jdbc.LiPreparedStatement;
 import jp.ats.liverwort.jdbc.LiResultSet;
-import jp.ats.liverwort.util.U;
 
 /**
  * {@link ConcreteBatchStatement} で使用する {@link LiPreparedStatement} の実装クラスです。

@@ -6,8 +6,8 @@ import java.util.List;
 import org.eclipse.jface.action.IMenuManager;
 import org.eclipse.swt.graphics.Image;
 
-import jp.ats.liverwort.ext.TransactionManager;
-import jp.ats.liverwort.ext.TransactionShell;
+import jp.ats.liverwort.internal.TransactionManager;
+import jp.ats.liverwort.internal.TransactionShell;
 import jp.ats.liverwort.jdbc.LiConnection;
 import jp.ats.liverwort.jdbc.LiContext;
 import jp.ats.liverwort.jdbc.LiManager;

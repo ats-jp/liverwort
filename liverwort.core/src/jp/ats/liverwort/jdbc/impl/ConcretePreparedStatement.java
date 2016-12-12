@@ -9,10 +9,10 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Timestamp;
 
+import jp.ats.liverwort.internal.U;
 import jp.ats.liverwort.jdbc.Configure;
 import jp.ats.liverwort.jdbc.LiPreparedStatement;
 import jp.ats.liverwort.jdbc.LiResultSet;
-import jp.ats.liverwort.util.U;
 
 /**
  * Liverwort が使用する {@link LiPreparedStatement} の標準実装クラスです。

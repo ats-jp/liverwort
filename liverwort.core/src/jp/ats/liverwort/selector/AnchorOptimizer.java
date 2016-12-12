@@ -2,12 +2,12 @@ package jp.ats.liverwort.selector;
 
 import java.util.Objects;
 
+import jp.ats.liverwort.internal.U;
 import jp.ats.liverwort.jdbc.LiContext;
 import jp.ats.liverwort.jdbc.LiResult;
 import jp.ats.liverwort.jdbc.ResourceLocator;
 import jp.ats.liverwort.sql.Column;
 import jp.ats.liverwort.sql.SelectClause;
-import jp.ats.liverwort.util.U;
 
 /**
  * static かつ final なフィールドを ID として {@link ColumnRepository} から SELECT 句構成カラムを取得する {@link Optimizer} です。

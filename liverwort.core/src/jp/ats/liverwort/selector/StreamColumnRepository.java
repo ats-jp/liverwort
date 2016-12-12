@@ -13,9 +13,9 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
+import jp.ats.liverwort.internal.IOStream;
+import jp.ats.liverwort.internal.U;
 import jp.ats.liverwort.jdbc.ResourceLocator;
-import jp.ats.liverwort.util.IOStream;
-import jp.ats.liverwort.util.U;
 
 /**
  * {@link IOStream} から定義情報を読み込むことができる {@link ColumnRepository} です。

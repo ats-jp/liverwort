@@ -11,12 +11,12 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+import jp.ats.liverwort.internal.CollectionMap;
+import jp.ats.liverwort.internal.Queue;
+import jp.ats.liverwort.internal.QueueElement;
+import jp.ats.liverwort.internal.U;
 import jp.ats.liverwort.jdbc.ResourceLocator;
 import jp.ats.liverwort.sql.Column;
-import jp.ats.liverwort.util.CollectionMap;
-import jp.ats.liverwort.util.Queue;
-import jp.ats.liverwort.util.QueueElement;
-import jp.ats.liverwort.util.U;
 
 /**
  * UNDO REDO が可能になった {@link ColumnRepository} です。

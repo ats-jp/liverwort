@@ -13,6 +13,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 
+import jp.ats.liverwort.internal.U;
 import jp.ats.liverwort.jdbc.BatchStatement;
 import jp.ats.liverwort.jdbc.BatchStatementWrapper;
 import jp.ats.liverwort.jdbc.ColumnMetadata;
@@ -26,7 +27,6 @@ import jp.ats.liverwort.jdbc.PreparedStatementWrapper;
 import jp.ats.liverwort.jdbc.PrimaryKeyMetadata;
 import jp.ats.liverwort.jdbc.ResourceLocator;
 import jp.ats.liverwort.jdbc.TableMetadata;
-import jp.ats.liverwort.util.U;
 
 /**
  * Liverwort が使用する {@link LiConnection} の標準実装クラスです。

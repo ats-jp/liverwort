@@ -6,24 +6,25 @@ import java.util.Optional;
 import javax.annotation.Generated;
 
 import /*++{0}.{1}DAO.{1}Iterator++*//*--*/jp.ats.liverwort.develop.DAOBase.IteratorBase/*--*/;
-import jp.ats.liverwort.ext.AbstractOrderQueryColumn;
-import jp.ats.liverwort.ext.AbstractSelectQueryColumn;
+import jp.ats.liverwort.support.AbstractOrderQueryColumn;
+import jp.ats.liverwort.support.AbstractSelectQueryColumn;
 /*++{8}++*/
-import jp.ats.liverwort.ext.None;
-import jp.ats.liverwort.ext.NotUniqueException;
-import jp.ats.liverwort.ext.OneToManyExecutor;
-import jp.ats.liverwort.ext.OrderByOfferFunction;
-import jp.ats.liverwort.ext.Query;
-import jp.ats.liverwort.ext.QueryConditionContext;
-import jp.ats.liverwort.ext.QueryContext;
-import jp.ats.liverwort.ext.QueryOptions;
-import jp.ats.liverwort.ext.QueryRelationship;
-import jp.ats.liverwort.ext.ReferenceQueryColumn;
-import jp.ats.liverwort.ext.SelectOffer;
-import jp.ats.liverwort.ext.SelectOfferFunction;
-import jp.ats.liverwort.ext.SelectOfferFunction.SelectOffers;
-import jp.ats.liverwort.ext.Subquery;
-import jp.ats.liverwort.ext.WhereQueryColumn;
+import jp.ats.liverwort.support.None;
+import jp.ats.liverwort.support.NotUniqueException;
+import jp.ats.liverwort.support.OneToManyExecutor;
+import jp.ats.liverwort.support.OrderByOfferFunction;
+import jp.ats.liverwort.support.Query;
+import jp.ats.liverwort.support.QueryConditionContext;
+import jp.ats.liverwort.support.QueryContext;
+import jp.ats.liverwort.support.QueryOptions;
+import jp.ats.liverwort.support.QueryRelationship;
+import jp.ats.liverwort.support.ReferenceQueryColumn;
+import jp.ats.liverwort.support.SelectOffer;
+import jp.ats.liverwort.support.SelectOfferFunction;
+import jp.ats.liverwort.support.SelectOfferFunction.SelectOffers;
+import jp.ats.liverwort.internal.U;
+import jp.ats.liverwort.support.Subquery;
+import jp.ats.liverwort.support.WhereQueryColumn;
 import jp.ats.liverwort.jdbc.LiContext;
 import jp.ats.liverwort.jdbc.ResourceLocator;
 import jp.ats.liverwort.orm.QueryOption;
@@ -37,7 +38,6 @@ import jp.ats.liverwort.sql.Condition;
 import jp.ats.liverwort.sql.OrderByClause;
 import jp.ats.liverwort.sql.Relationship;
 import jp.ats.liverwort.sql.RelationshipFactory;
-import jp.ats.liverwort.util.U;
 
 /**
  * 自動生成された '{'@link Query'}' の実装クラスです。

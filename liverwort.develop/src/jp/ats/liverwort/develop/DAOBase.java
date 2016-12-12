@@ -2,14 +2,14 @@
 
 import javax.annotation.Generated;
 
-import jp.ats.liverwort.ext.DAO;
-import jp.ats.liverwort.ext.DTOIterator;
 import jp.ats.liverwort.jdbc.ResourceLocator;
 import jp.ats.liverwort.orm.DataAccessHelper;
 import jp.ats.liverwort.orm.DataObjectIterator;
 import jp.ats.liverwort.orm.QueryOption;
 import jp.ats.liverwort.orm.RowLockOption;
 import jp.ats.liverwort.orm.UpdatableDataObject;
+import jp.ats.liverwort.support.DAO;
+import jp.ats.liverwort.support.DTOIterator;
 import jp.ats.liverwort.selector.Optimizer;
 import jp.ats.liverwort.selector.SimpleOptimizer;
 import jp.ats.liverwort.sql.Condition;

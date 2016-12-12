@@ -3,12 +3,12 @@ package jp.ats.liverwort.jdbc.impl;
 import java.sql.Connection;
 import java.sql.SQLException;
 
+import jp.ats.liverwort.internal.U;
 import jp.ats.liverwort.jdbc.Configure;
 import jp.ats.liverwort.jdbc.LiConnection;
 import jp.ats.liverwort.jdbc.LiContext;
 import jp.ats.liverwort.jdbc.LiManager;
 import jp.ats.liverwort.jdbc.LiTransaction;
-import jp.ats.liverwort.util.U;
 
 /**
  * Liverwort が使用する {@link LiTransaction} の標準実装クラスです。

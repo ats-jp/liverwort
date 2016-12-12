@@ -8,10 +8,10 @@ import java.util.Set;
 import java.util.TreeMap;
 import java.util.TreeSet;
 
+import jp.ats.liverwort.internal.CollectionMap;
+import jp.ats.liverwort.internal.U;
 import jp.ats.liverwort.jdbc.ResourceLocator;
 import jp.ats.liverwort.sql.Column;
-import jp.ats.liverwort.util.CollectionMap;
-import jp.ats.liverwort.util.U;
 
 /**
  * @author 千葉 哲嗣

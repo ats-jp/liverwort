@@ -3,7 +3,7 @@ package jp.ats.liverwort.sql;
 import java.util.LinkedList;
 import java.util.List;
 
-import jp.ats.liverwort.util.U;
+import jp.ats.liverwort.internal.U;
 
 /**
  * ウィンドウ関数で使用する OVER 句を表すクラスです。

@@ -7,10 +7,10 @@ import java.util.Spliterators;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
+import jp.ats.liverwort.internal.U;
 import jp.ats.liverwort.jdbc.LiResultSet;
 import jp.ats.liverwort.jdbc.LiStatement;
 import jp.ats.liverwort.sql.Column;
-import jp.ats.liverwort.util.U;
 
 /**
  * 検索結果から {@link SelectedValues} を生成するクラスです。

@@ -6,12 +6,12 @@ import java.util.Spliterators;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
+import jp.ats.liverwort.internal.U;
 import jp.ats.liverwort.selector.Optimizer;
 import jp.ats.liverwort.selector.SelectedValuesIterator;
 import jp.ats.liverwort.sql.Condition;
 import jp.ats.liverwort.sql.OrderByClause;
 import jp.ats.liverwort.sql.Relationship;
-import jp.ats.liverwort.util.U;
 
 /**
  * 検索結果から {@link DataObject} を生成するクラスです。

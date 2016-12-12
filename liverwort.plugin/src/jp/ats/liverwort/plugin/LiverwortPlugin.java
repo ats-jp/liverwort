@@ -1,6 +1,6 @@
 package jp.ats.liverwort.plugin;
 
-import static jp.ats.liverwort.util.U.isAvailable;
+import static jp.ats.liverwort.internal.U.isAvailable;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
@@ -35,9 +35,8 @@ import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
 
 import jp.ats.liverwort.develop.CodeFormatter;
-import jp.ats.liverwort.ext.FileColumnRepositoryFactory;
-import jp.ats.liverwort.ext.LiConstants;
-import jp.ats.liverwort.ext.Query;
+import jp.ats.liverwort.internal.HomeStorage;
+import jp.ats.liverwort.internal.U;
 import jp.ats.liverwort.jdbc.LiContext;
 import jp.ats.liverwort.jdbc.LiManager;
 import jp.ats.liverwort.jdbc.LiTransaction;
@@ -47,8 +46,9 @@ import jp.ats.liverwort.jdbc.TransactionFactory;
 import jp.ats.liverwort.plugin.views.ClassBuilderView;
 import jp.ats.liverwort.plugin.views.QueryEditorView;
 import jp.ats.liverwort.selector.ColumnRepositoryFactory;
-import jp.ats.liverwort.util.HomeStorage;
-import jp.ats.liverwort.util.U;
+import jp.ats.liverwort.support.FileColumnRepositoryFactory;
+import jp.ats.liverwort.support.LiConstants;
+import jp.ats.liverwort.support.Query;
 
 public class LiverwortPlugin extends AbstractUIPlugin {
 

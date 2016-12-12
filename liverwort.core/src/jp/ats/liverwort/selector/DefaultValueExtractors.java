@@ -8,6 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
+import jp.ats.liverwort.internal.U;
 import jp.ats.liverwort.jdbc.DataTypeConverter;
 import jp.ats.liverwort.jdbc.LiResult;
 import jp.ats.liverwort.sql.Binder;
@@ -24,7 +25,6 @@ import jp.ats.liverwort.sql.binder.ObjectBinder;
 import jp.ats.liverwort.sql.binder.StringBinder;
 import jp.ats.liverwort.sql.binder.TimestampBinder;
 import jp.ats.liverwort.sql.binder.UUIDBinder;
-import jp.ats.liverwort.util.U;
 
 /**
  * Liverwort のデフォルト {@link ValueExtractors} です。

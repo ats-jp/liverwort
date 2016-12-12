@@ -6,7 +6,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.regex.Pattern;
 
-import jp.ats.liverwort.util.U;
+import jp.ats.liverwort.internal.U;
 
 /**
  * @author 千葉 哲嗣

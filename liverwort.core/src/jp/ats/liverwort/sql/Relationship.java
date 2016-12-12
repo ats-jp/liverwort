@@ -6,16 +6,16 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
+import jp.ats.liverwort.internal.CollectionMap;
+import jp.ats.liverwort.internal.Traversable;
+import jp.ats.liverwort.internal.TraversableNode;
+import jp.ats.liverwort.internal.Traverser;
+import jp.ats.liverwort.internal.TraverserOperator;
 import jp.ats.liverwort.jdbc.ColumnMetadata;
 import jp.ats.liverwort.jdbc.CrossReference;
 import jp.ats.liverwort.jdbc.DataTypeConverter;
 import jp.ats.liverwort.jdbc.MetadataUtilities;
 import jp.ats.liverwort.jdbc.ResourceLocator;
-import jp.ats.liverwort.util.CollectionMap;
-import jp.ats.liverwort.util.Traversable;
-import jp.ats.liverwort.util.TraversableNode;
-import jp.ats.liverwort.util.Traverser;
-import jp.ats.liverwort.util.TraverserOperator;
 
 /**
  * 検索対象となるテーブルと、そのテーブルが参照しているテーブルのツリーを構成する要素を表すクラスです。

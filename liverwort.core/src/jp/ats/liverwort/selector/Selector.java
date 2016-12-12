@@ -3,6 +3,7 @@ package jp.ats.liverwort.selector;
 import java.util.LinkedList;
 import java.util.List;
 
+import jp.ats.liverwort.internal.U;
 import jp.ats.liverwort.jdbc.LiContext;
 import jp.ats.liverwort.jdbc.LiManager;
 import jp.ats.liverwort.jdbc.LiStatement;
@@ -16,7 +17,6 @@ import jp.ats.liverwort.sql.RelationshipFactory;
 import jp.ats.liverwort.sql.SQLAdjuster;
 import jp.ats.liverwort.sql.SelectClause;
 import jp.ats.liverwort.sql.WindowFunction;
-import jp.ats.liverwort.util.U;
 
 /**
  * {@link Optimizer} を使用して SELECT 句を定義し、データベースの検索を行うクラスです。

@@ -3,9 +3,9 @@ package jp.ats.liverwort.jdbc.impl;
 import java.util.Arrays;
 import java.util.List;
 
+import jp.ats.liverwort.internal.U;
 import jp.ats.liverwort.jdbc.CrossReference;
 import jp.ats.liverwort.jdbc.ResourceLocator;
-import jp.ats.liverwort.util.U;
 
 /**
  * {@link CrossReference} の簡易実装クラスです。

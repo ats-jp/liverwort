@@ -10,9 +10,9 @@ import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Timestamp;
 
+import jp.ats.liverwort.internal.U;
 import jp.ats.liverwort.jdbc.Configure;
 import jp.ats.liverwort.jdbc.LiResultSet;
-import jp.ats.liverwort.util.U;
 
 /**
  * Liverwort が使用する {@link LiResultSet} の標準実装クラスです。

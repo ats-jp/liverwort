@@ -6,9 +6,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
+import jp.ats.liverwort.internal.U;
 import jp.ats.liverwort.jdbc.BatchStatement;
 import jp.ats.liverwort.jdbc.PreparedStatementComplementer;
-import jp.ats.liverwort.util.U;
 
 /**
  * @author 千葉 哲嗣

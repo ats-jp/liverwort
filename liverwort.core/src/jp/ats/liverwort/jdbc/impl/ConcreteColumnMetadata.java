@@ -3,8 +3,8 @@ package jp.ats.liverwort.jdbc.impl;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import jp.ats.liverwort.internal.U;
 import jp.ats.liverwort.jdbc.ColumnMetadata;
-import jp.ats.liverwort.util.U;
 
 /**
  * @author 千葉 哲嗣

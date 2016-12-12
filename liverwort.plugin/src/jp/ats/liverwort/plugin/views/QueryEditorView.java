@@ -19,6 +19,7 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.IWorkbenchActionConstants;
 import org.eclipse.ui.part.DrillDownAdapter;
 
+import jp.ats.liverwort.internal.U;
 import jp.ats.liverwort.jdbc.ResourceLocator;
 import jp.ats.liverwort.plugin.Constants;
 import jp.ats.liverwort.plugin.LiverwortPlugin;
@@ -28,7 +29,6 @@ import jp.ats.liverwort.plugin.views.element.EditorRootElement;
 import jp.ats.liverwort.plugin.views.element.Element;
 import jp.ats.liverwort.selector.ColumnRepositoryFactory;
 import jp.ats.liverwort.selector.CommandColumnRepository;
-import jp.ats.liverwort.util.U;
 
 public class QueryEditorView extends AbstractView {
 

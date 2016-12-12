@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import jp.ats.liverwort.util.U;
+import jp.ats.liverwort.internal.U;
 
 /**
  * Liverwort を初期化するための情報をまとめるクラスです。

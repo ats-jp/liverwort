@@ -21,11 +21,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
-import jp.ats.liverwort.ext.Many;
-import jp.ats.liverwort.ext.annotation.DTORelationship;
-import jp.ats.liverwort.ext.annotation.FKs;
-import jp.ats.liverwort.ext.annotation.PseudoFK;
-import jp.ats.liverwort.ext.annotation.PseudoPK;
+import jp.ats.liverwort.internal.U;
 import jp.ats.liverwort.jdbc.ColumnMetadata;
 import jp.ats.liverwort.jdbc.CrossReference;
 import jp.ats.liverwort.jdbc.LiContext;
@@ -36,7 +32,11 @@ import jp.ats.liverwort.jdbc.TableMetadata;
 import jp.ats.liverwort.sql.Column;
 import jp.ats.liverwort.sql.Relationship;
 import jp.ats.liverwort.sql.RelationshipFactory;
-import jp.ats.liverwort.util.U;
+import jp.ats.liverwort.support.Many;
+import jp.ats.liverwort.support.annotation.DTORelationship;
+import jp.ats.liverwort.support.annotation.FKs;
+import jp.ats.liverwort.support.annotation.PseudoFK;
+import jp.ats.liverwort.support.annotation.PseudoPK;
 
 /**
  * データベースの構成を読み取り、各テーブルの DAO クラスと DTO クラスの Java ソースを生成するジェネレータクラスです。

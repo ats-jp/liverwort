@@ -6,7 +6,7 @@ import java.util.Objects;
 import java.util.Optional;
 import java.util.regex.Pattern;
 
-import jp.ats.liverwort.util.U;
+import jp.ats.liverwort.internal.U;
 
 /**
  * Liverwort の現在の設定を使用するためのクラスです。

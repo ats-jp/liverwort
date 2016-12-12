@@ -4,12 +4,12 @@ import java.text.DecimalFormat;
 import java.util.HashMap;
 import java.util.Map;
 
+import jp.ats.liverwort.internal.CollectionMap;
 import jp.ats.liverwort.jdbc.LiContext;
 import jp.ats.liverwort.jdbc.LiManager;
 import jp.ats.liverwort.jdbc.ManagementSubject;
 import jp.ats.liverwort.jdbc.MetadataUtilities;
 import jp.ats.liverwort.jdbc.ResourceLocator;
-import jp.ats.liverwort.util.CollectionMap;
 
 /**
  * {@link Relationship} の生成、管理を行うファクトリクラスです。

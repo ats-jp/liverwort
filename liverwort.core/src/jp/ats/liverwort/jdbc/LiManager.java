@@ -1,7 +1,7 @@
 package jp.ats.liverwort.jdbc;
 
-import jp.ats.liverwort.ext.Transactions;
-import jp.ats.liverwort.util.LoggingManager;
+import jp.ats.liverwort.internal.LoggingManager;
+import jp.ats.liverwort.internal.Transactions;
 
 /**
  * Liverwort の設定を管理し、トランザクションの生成、接続の管理等をおこなうハブクラスです。

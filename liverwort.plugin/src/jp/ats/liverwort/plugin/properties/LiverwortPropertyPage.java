@@ -1,6 +1,6 @@
 package jp.ats.liverwort.plugin.properties;
 
-import static jp.ats.liverwort.util.U.isAvailable;
+import static jp.ats.liverwort.internal.U.isAvailable;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -32,13 +32,13 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.ui.IWorkbenchPropertyPage;
 
 import jp.ats.liverwort.develop.CodeFormatter;
+import jp.ats.liverwort.internal.U;
 import jp.ats.liverwort.jdbc.MetadataFactory;
 import jp.ats.liverwort.jdbc.TransactionFactory;
 import jp.ats.liverwort.plugin.Constants;
 import jp.ats.liverwort.plugin.LiverwortPlugin;
 import jp.ats.liverwort.plugin.LiverwortPlugin.JavaProjectException;
 import jp.ats.liverwort.selector.ColumnRepositoryFactory;
-import jp.ats.liverwort.util.U;
 
 public class LiverwortPropertyPage
 	extends FieldEditorPreferencePage

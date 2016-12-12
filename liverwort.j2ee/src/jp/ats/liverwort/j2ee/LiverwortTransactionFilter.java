@@ -11,13 +11,13 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 
-import jp.ats.liverwort.ext.Liverwort;
-import jp.ats.liverwort.ext.ParsableOptionKey;
-import jp.ats.liverwort.ext.TransactionManager;
-import jp.ats.liverwort.ext.TransactionShell;
+import jp.ats.liverwort.internal.TransactionManager;
+import jp.ats.liverwort.internal.TransactionShell;
 import jp.ats.liverwort.jdbc.LiContext;
 import jp.ats.liverwort.jdbc.LiManager;
 import jp.ats.liverwort.jdbc.LiTransaction;
+import jp.ats.liverwort.support.Liverwort;
+import jp.ats.liverwort.support.ParsableOptionKey;
 
 /**
  * {@link Filter} の範囲でトランザクションを管理するためのクラスです。

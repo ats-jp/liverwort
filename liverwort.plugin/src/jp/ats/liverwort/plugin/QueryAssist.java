@@ -19,7 +19,7 @@ import org.eclipse.jface.text.contentassist.ICompletionProposal;
 import org.eclipse.jface.text.contentassist.IContextInformation;
 
 import jp.ats.liverwort.develop.IDGenerator;
-import jp.ats.liverwort.ext.Query;
+import jp.ats.liverwort.support.Query;
 
 public class QueryAssist implements IJavaCompletionProposalComputer {
 

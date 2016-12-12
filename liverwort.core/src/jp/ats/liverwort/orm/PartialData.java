@@ -1,5 +1,6 @@
 package jp.ats.liverwort.orm;
 
+import jp.ats.liverwort.internal.U;
 import jp.ats.liverwort.jdbc.LiContext;
 import jp.ats.liverwort.jdbc.ResourceLocator;
 import jp.ats.liverwort.sql.Bindable;
@@ -10,7 +11,6 @@ import jp.ats.liverwort.sql.RelationshipFactory;
 import jp.ats.liverwort.sql.Searchable;
 import jp.ats.liverwort.sql.Updatable;
 import jp.ats.liverwort.sql.Updater;
-import jp.ats.liverwort.util.U;
 
 /**
  * テーブルとその中の複数のカラムと、それらの値を持つ物を定義した基底クラスです。

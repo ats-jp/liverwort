@@ -1,6 +1,6 @@
 package jp.ats.liverwort.jdbc;
 
-import jp.ats.liverwort.util.U;
+import jp.ats.liverwort.internal.U;
 
 /**
  * 独自の {@link MetadataFactory} を設定しなかった場合に使用されるデフォルトの {@link MetadataFactory} です。

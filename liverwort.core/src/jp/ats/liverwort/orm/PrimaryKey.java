@@ -7,6 +7,7 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
 
+import jp.ats.liverwort.internal.U;
 import jp.ats.liverwort.jdbc.CrossReference;
 import jp.ats.liverwort.jdbc.LiContext;
 import jp.ats.liverwort.jdbc.LiManager;
@@ -18,7 +19,6 @@ import jp.ats.liverwort.sql.Condition;
 import jp.ats.liverwort.sql.Relationship;
 import jp.ats.liverwort.sql.UpdateDMLBuilder;
 import jp.ats.liverwort.sql.binder.StringBinder;
-import jp.ats.liverwort.util.U;
 
 /**
  * {@link DataObject} 内の主キー部分を表し、主キーに関連した操作を行うことができるクラスです。

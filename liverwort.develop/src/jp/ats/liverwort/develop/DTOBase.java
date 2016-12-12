@@ -2,11 +2,11 @@
 
 import javax.annotation.Generated;
 
-import jp.ats.liverwort.ext.DTO;
-import jp.ats.liverwort.ext.annotation.DTOGetter;
-/*--*/import jp.ats.liverwort.ext.annotation.DTORelationship;/*--*/
-import jp.ats.liverwort.ext.annotation.DTOSetter;
-import jp.ats.liverwort.ext.annotation.Resource;
+import jp.ats.liverwort.support.DTO;
+import jp.ats.liverwort.support.annotation.DTOGetter;
+/*--*/import jp.ats.liverwort.support.annotation.DTORelationship;/*--*/
+import jp.ats.liverwort.support.annotation.DTOSetter;
+import jp.ats.liverwort.support.annotation.Resource;
 /*++{8}++*/
 import jp.ats.liverwort.jdbc.LiContext;
 import jp.ats.liverwort.orm.UpdatableDataObject;

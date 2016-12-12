@@ -2,6 +2,7 @@ package jp.ats.liverwort.orm;
 
 import java.math.BigInteger;
 
+import jp.ats.liverwort.internal.U;
 import jp.ats.liverwort.jdbc.LiContext;
 import jp.ats.liverwort.jdbc.LiManager;
 import jp.ats.liverwort.jdbc.LiResultSet;
@@ -10,7 +11,6 @@ import jp.ats.liverwort.jdbc.ResourceLocator;
 import jp.ats.liverwort.sql.Bindable;
 import jp.ats.liverwort.sql.Condition;
 import jp.ats.liverwort.sql.binder.StringBinder;
-import jp.ats.liverwort.util.U;
 
 /**
  * 数値による連続した値を払い出すクラスです。

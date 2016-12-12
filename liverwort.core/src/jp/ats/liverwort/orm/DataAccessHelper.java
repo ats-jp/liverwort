@@ -3,6 +3,8 @@ package jp.ats.liverwort.orm;
 import java.util.HashMap;
 import java.util.Map;
 
+import jp.ats.liverwort.internal.LRUCache;
+import jp.ats.liverwort.internal.U;
 import jp.ats.liverwort.jdbc.BatchStatement;
 import jp.ats.liverwort.jdbc.DuplicateKeyException;
 import jp.ats.liverwort.jdbc.LiConnection;
@@ -28,8 +30,6 @@ import jp.ats.liverwort.sql.SQLAdjuster;
 import jp.ats.liverwort.sql.SelectClause;
 import jp.ats.liverwort.sql.Updatable;
 import jp.ats.liverwort.sql.UpdateDMLBuilder;
-import jp.ats.liverwort.util.LRUCache;
-import jp.ats.liverwort.util.U;
 
 /**
  * データベースに対する CRUD 処理を簡易に行うためのユーティリティクラスです。

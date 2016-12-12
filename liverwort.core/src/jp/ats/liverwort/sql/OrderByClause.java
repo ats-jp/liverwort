@@ -4,9 +4,9 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 
+import jp.ats.liverwort.internal.U;
 import jp.ats.liverwort.jdbc.LiContext;
 import jp.ats.liverwort.jdbc.ResourceLocator;
-import jp.ats.liverwort.util.U;
 
 /**
  * SELECT 文の ORDER BY 句を表すクラスです。

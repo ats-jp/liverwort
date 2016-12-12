@@ -27,6 +27,7 @@ import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.views.properties.IPropertyDescriptor;
 import org.eclipse.ui.views.properties.PropertyDescriptor;
 
+import jp.ats.liverwort.internal.U;
 import jp.ats.liverwort.jdbc.LiContext;
 import jp.ats.liverwort.jdbc.ResourceLocator;
 import jp.ats.liverwort.plugin.Constants;
@@ -39,7 +40,6 @@ import jp.ats.liverwort.sql.FromClause;
 import jp.ats.liverwort.sql.QueryBuilder;
 import jp.ats.liverwort.sql.RelationshipFactory;
 import jp.ats.liverwort.sql.SelectClause;
-import jp.ats.liverwort.util.U;
 
 public class AnchorElement extends PropertySourceElement implements Comparable<AnchorElement> {
 

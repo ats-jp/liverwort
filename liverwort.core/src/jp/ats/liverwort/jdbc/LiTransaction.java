@@ -2,8 +2,8 @@ package jp.ats.liverwort.jdbc;
 
 import java.sql.Connection;
 
-import jp.ats.liverwort.ext.Transactions;
-import jp.ats.liverwort.util.U;
+import jp.ats.liverwort.internal.Transactions;
+import jp.ats.liverwort.internal.U;
 
 /**
  * {@link Connection} から、トランザクション操作部分のみを抽出した抽象クラスです。

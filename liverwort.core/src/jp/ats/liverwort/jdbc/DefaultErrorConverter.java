@@ -3,7 +3,7 @@ package jp.ats.liverwort.jdbc;
 import java.sql.DataTruncation;
 import java.sql.SQLException;
 
-import jp.ats.liverwort.util.U;
+import jp.ats.liverwort.internal.U;
 
 /**
  * 独自の {@link ErrorConverter} を設定しなかった場合に使用されるデフォルトの {@link ErrorConverter} です。

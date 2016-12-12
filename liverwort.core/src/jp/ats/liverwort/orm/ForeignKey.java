@@ -2,9 +2,9 @@ package jp.ats.liverwort.orm;
 
 import java.util.Objects;
 
+import jp.ats.liverwort.internal.U;
 import jp.ats.liverwort.jdbc.ResourceLocator;
 import jp.ats.liverwort.sql.Bindable;
-import jp.ats.liverwort.util.U;
 
 /**
  * 主キーを参照する外部キーを表すクラスで、 {@link PrimaryKey} と対応しています。

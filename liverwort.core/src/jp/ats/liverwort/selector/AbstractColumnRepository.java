@@ -13,13 +13,13 @@ import java.util.Set;
 import java.util.TreeMap;
 import java.util.stream.Collectors;
 
+import jp.ats.liverwort.internal.U;
 import jp.ats.liverwort.jdbc.LiContext;
 import jp.ats.liverwort.jdbc.ResourceLocator;
 import jp.ats.liverwort.sql.Column;
 import jp.ats.liverwort.sql.NotFoundException;
 import jp.ats.liverwort.sql.Relationship;
 import jp.ats.liverwort.sql.RelationshipFactory;
-import jp.ats.liverwort.util.U;
 
 /**
  * @author 千葉 哲嗣

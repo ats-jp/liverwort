@@ -19,7 +19,7 @@ import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.jdt.core.JavaModelException;
 
-import jp.ats.liverwort.util.U;
+import jp.ats.liverwort.internal.U;
 
 class JavaProjectClassLoader extends ClassLoader {
 
