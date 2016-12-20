@@ -16,8 +16,8 @@ import jp.ats.liverwort.internal.TransactionShell;
 import jp.ats.liverwort.jdbc.LiContext;
 import jp.ats.liverwort.jdbc.LiManager;
 import jp.ats.liverwort.jdbc.LiTransaction;
-import jp.ats.liverwort.support.Liverwort;
-import jp.ats.liverwort.support.ParsableOptionKey;
+import jp.ats.liverwort.util.Liverwort;
+import jp.ats.liverwort.util.ParsableOptionKey;
 
 /**
  * {@link Filter} の範囲でトランザクションを管理するためのクラスです。

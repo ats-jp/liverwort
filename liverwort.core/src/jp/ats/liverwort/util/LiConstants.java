@@ -1,9 +1,9 @@
-package jp.ats.liverwort.support;
+package jp.ats.liverwort.util;
 
-import static jp.ats.liverwort.support.ParsableOptionKey.OptionValueParser.TO_BOOLEAN;
-import static jp.ats.liverwort.support.ParsableOptionKey.OptionValueParser.TO_CLASS;
-import static jp.ats.liverwort.support.ParsableOptionKey.OptionValueParser.TO_STRING;
-import static jp.ats.liverwort.support.ParsableOptionKey.OptionValueParser.TO_STRING_ARRAY;
+import static jp.ats.liverwort.util.ParsableOptionKey.OptionValueParser.TO_BOOLEAN;
+import static jp.ats.liverwort.util.ParsableOptionKey.OptionValueParser.TO_CLASS;
+import static jp.ats.liverwort.util.ParsableOptionKey.OptionValueParser.TO_STRING;
+import static jp.ats.liverwort.util.ParsableOptionKey.OptionValueParser.TO_STRING_ARRAY;
 
 import jp.ats.liverwort.jdbc.ErrorConverter;
 import jp.ats.liverwort.jdbc.MetadataFactory;

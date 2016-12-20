@@ -1,4 +1,4 @@
-package jp.ats.liverwort.support;
+package jp.ats.liverwort.util;
 
 import java.io.File;
 import java.io.IOException;
@@ -19,6 +19,7 @@ import jp.ats.liverwort.jdbc.LiManager;
 import jp.ats.liverwort.jdbc.Metadata;
 import jp.ats.liverwort.jdbc.MetadataFactory;
 import jp.ats.liverwort.jdbc.ResourceLocator;
+import jp.ats.liverwort.support.DTO;
 import jp.ats.liverwort.support.annotation.FKs;
 import jp.ats.liverwort.support.annotation.PseudoFK;
 import jp.ats.liverwort.support.annotation.PseudoPK;

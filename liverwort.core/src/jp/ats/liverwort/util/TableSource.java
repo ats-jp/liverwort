@@ -1,4 +1,4 @@
-package jp.ats.liverwort.support;
+package jp.ats.liverwort.util;
 
 import java.util.Objects;
 

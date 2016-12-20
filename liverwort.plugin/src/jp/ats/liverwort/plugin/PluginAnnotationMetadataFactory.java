@@ -1,7 +1,7 @@
 package jp.ats.liverwort.plugin;
 
-import jp.ats.liverwort.support.AnnotationMetadataFactory;
 import jp.ats.liverwort.support.DTO;
+import jp.ats.liverwort.util.AnnotationMetadataFactory;
 
 public class PluginAnnotationMetadataFactory extends AnnotationMetadataFactory {
 

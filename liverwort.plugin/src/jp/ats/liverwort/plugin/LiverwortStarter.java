@@ -4,7 +4,7 @@ import java.util.Map;
 
 import jp.ats.liverwort.jdbc.LiContext;
 import jp.ats.liverwort.jdbc.OptionKey;
-import jp.ats.liverwort.support.Liverwort;
+import jp.ats.liverwort.util.Liverwort;
 
 /**
  * Liverwort 全体を対象とする、簡易操作クラスです。

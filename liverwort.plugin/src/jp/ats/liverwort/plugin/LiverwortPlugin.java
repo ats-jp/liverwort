@@ -46,9 +46,9 @@ import jp.ats.liverwort.jdbc.TransactionFactory;
 import jp.ats.liverwort.plugin.views.ClassBuilderView;
 import jp.ats.liverwort.plugin.views.QueryEditorView;
 import jp.ats.liverwort.selector.ColumnRepositoryFactory;
-import jp.ats.liverwort.support.FileColumnRepositoryFactory;
-import jp.ats.liverwort.support.LiConstants;
 import jp.ats.liverwort.support.Query;
+import jp.ats.liverwort.util.FileColumnRepositoryFactory;
+import jp.ats.liverwort.util.LiConstants;
 
 public class LiverwortPlugin extends AbstractUIPlugin {
 

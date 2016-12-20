@@ -1,4 +1,4 @@
-package jp.ats.liverwort.support;
+package jp.ats.liverwort.util;
 
 import java.io.BufferedInputStream;
 import java.io.IOException;

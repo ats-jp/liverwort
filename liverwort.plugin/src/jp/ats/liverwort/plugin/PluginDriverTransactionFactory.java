@@ -4,7 +4,7 @@ import java.net.URL;
 import java.sql.Connection;
 import java.sql.SQLException;
 
-import jp.ats.liverwort.support.DriverTransactionFactory;
+import jp.ats.liverwort.util.DriverTransactionFactory;
 
 public class PluginDriverTransactionFactory extends DriverTransactionFactory {
 
