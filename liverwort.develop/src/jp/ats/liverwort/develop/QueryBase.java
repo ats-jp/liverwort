@@ -296,6 +296,37 @@ public class /*++{1}Query++*//*--*/QueryBase/*--*/
 	/*++'++*/}/*++'++*/
 
 	/**
+	 * 現在保持している条件をリセットします。
+	 *
+	 * @return このインスタンス
+	 */
+	public /*++{1}Query++*//*--*/QueryBase/*--*/ resetCondition() /*++'++*/{/*++'++*/
+		condition = null;
+		return this;
+	/*++'++*/}/*++'++*/
+
+	/**
+	 * 現在保持している並び順をリセットします。
+	 *
+	 * @return このインスタンス
+	 */
+	public /*++{1}Query++*//*--*/QueryBase/*--*/ resetOrder() /*++'++*/{/*++'++*/
+		orderByClause = null;
+		return this;
+	/*++'++*/}/*++'++*/
+
+	/**
+	 * 現在保持している条件、並び順をリセットします。
+	 *
+	 * @return このインスタンス
+	 */
+	public /*++{1}Query++*//*--*/QueryBase/*--*/ reset() /*++'++*/{/*++'++*/
+		condition = null;
+		orderByClause = null;
+		return this;
+	/*++'++*/}/*++'++*/
+
+	/**
 	 * 自動生成された '{'@link Executor'}' の実装クラスです。
 	 * @param <M> Many 一対多の多側の型連鎖
 	 */

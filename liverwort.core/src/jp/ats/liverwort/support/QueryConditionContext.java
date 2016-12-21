@@ -19,7 +19,8 @@ public enum QueryConditionContext {
 
 		@Override
 		public void addCondition(QueryRelationship relationship, Condition condition) {
-			if (relationship.getWhereClause() != null) throw new IllegalStateException("既に where は使用されています");
+			if (relationship.getWhereClause() != null)
+				throw new IllegalStateException("既に where は使用されています");
 			relationship.setWhereClause(condition);
 		}
 	},

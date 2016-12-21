@@ -4,6 +4,8 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import jp.ats.liverwort.sql.Condition.ProxyCondition;
 import jp.ats.liverwort.sql.binder.StringBinder;
@@ -229,6 +231,70 @@ public class ConditionFactory {
 		String columnName,
 		Bindable bindable) {
 		return operator.create(new PhantomColumn(columnName), bindable);
+	}
+
+	/**
+	 * IN を使用した条件句を生成します。
+	 *
+	 * @param column 対象となるカラム
+	 * @param values 比較する値
+	 * @return 作成されたインスタンス
+	 */
+	public static Condition createInCondition(
+		Column column,
+		String... values) {
+		return createCondition(
+			buildInClause(values.length),
+			new Column[] { column },
+			toBindables(values));
+	}
+
+	/**
+	 * IN を使用した条件句を生成します。
+	 *
+	 * @param column 対象となるカラム
+	 * @param values 比較する値
+	 * @return 作成されたインスタンス
+	 */
+	public static Condition createInCondition(
+		Column column,
+		Bindable... values) {
+		return createCondition(
+			buildInClause(values.length),
+			new Column[] { column },
+			values);
+	}
+
+	/**
+	 * IN を使用した条件句を生成します。
+	 *
+	 * @param columnName 対象となるカラム
+	 * @param values 比較する値
+	 * @return 作成されたインスタンス
+	 */
+	public static Condition createInCondition(
+		String columnName,
+		String... values) {
+		return createCondition(
+			buildInClause(values.length),
+			new Column[] { new PhantomColumn(columnName) },
+			toBindables(values));
+	}
+
+	/**
+	 * IN を使用した条件句を生成します。
+	 *
+	 * @param columnName 対象となるカラム
+	 * @param values 比較する値
+	 * @return 作成されたインスタンス
+	 */
+	public static Condition createInCondition(
+		String columnName,
+		Bindable... values) {
+		return createCondition(
+			buildInClause(values.length),
+			new Column[] { new PhantomColumn(columnName) },
+			values);
 	}
 
 	/**
@@ -533,5 +599,16 @@ public class ConditionFactory {
 
 	private static String escape(String value) {
 		return pattern.matcher(value).replaceAll("!$1");
+	}
+
+	private static String buildInClause(int length) {
+		return "{0} IN (" + String.join(
+			", ",
+			Stream.generate(() -> "?").limit(length).collect(Collectors.toList())) + ")";
+	}
+
+	private static Bindable[] toBindables(String[] values) {
+		List<StringBinder> bindables = Arrays.asList(values).stream().map(v -> new StringBinder(v)).collect(Collectors.toList());
+		return bindables.toArray(new Bindable[bindables.size()]);
 	}
 }
